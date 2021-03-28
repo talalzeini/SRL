@@ -11,26 +11,25 @@ fatty_acids = []
 for i in range(len(cal_consumed)):
     calories_for_month = sum(cal_consumed[:i])
     carbs.append((0.45 * calories_for_month))
-    proteins.append((0.30 * calories_for_month))
+    proteins.append((0.35 * calories_for_month))
     fat.append((0.20 * calories_for_month))
-    fatty_acids.append((0.05 * calories_for_month))
 
 print(calories_for_month)
 print(carbs)
 print(proteins)
 print(fat)
-print(fatty_acids)
 print()
 
 print(carbs[-1] / 4000)
 print(proteins[-1] / 4000)
-print((fat[-1] + fatty_acids[-1]) / 9000)
+print(fat[-1] / 9000)
 
-print(sum([(carbs[-1] / 4000), (proteins[-1] / 4000), ((fat[-1] + fatty_acids[-1]) / 9000)]))
+print(sum([(carbs[-1] / 4000), (proteins[-1] / 4000), (fat[-1] / 9000)]))
 
 plt.xlabel('Months after take off')
 plt.ylabel('Kilocalories Consumed (1,000,000 Kcal)')
 plt.title('Kilocalories Consumed by the Crew')
-plt.stackplot(timeInFlight, fatty_acids, fat, proteins, carbs, labels=['Fatty Acids', 'Fat', 'Proteins', 'Carbs'])
+pal = ["#15ab00", "#ff1100", "#ff6600"]
+plt.stackplot(timeInFlight, carbs, proteins, fat, labels=['Carbs', 'Proteins', 'Fat'], colors=pal)
 plt.legend(loc='upper left')
 plt.show()
