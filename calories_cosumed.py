@@ -10,10 +10,10 @@ fat = []
 fatty_acids = []
 for i in range(len(cal_consumed)):
   calories_for_month = sum(cal_consumed[:i])
-  carbs.append( (45 * calories_for_month))
-  proteins.append( (30 * calories_for_month))
-  fat.append( (20 * calories_for_month))
-  fatty_acids.append( (5 * calories_for_month))
+  carbs.append( (0.45 * calories_for_month))
+  proteins.append( (0.30 * calories_for_month))
+  fat.append( (0.20 * calories_for_month))
+  fatty_acids.append( (0.5 * calories_for_month))
 
 plt.xlabel('Months after take off') 
 plt.ylabel('Kilocalories Consumed 1,000,000 kcal/month') 
