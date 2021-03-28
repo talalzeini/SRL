@@ -8,12 +8,13 @@ summ = 0
 production_list = [7730,7730,7730,7730,7730,7730,7730,7730,7730,7730,7730]
 sumList = []
 for i in range(len(timeInFlight)):       
-  summ = sum(production_list[:i])-sum(cal_consumed[:i])
+  summ = 8000000 + sum(production_list[:i])-sum(cal_consumed[:i])
   sumList.append(summ)
 
 print(sumList)
 plt.plot(timeInFlight, sumList) 
+plt.plot(timeInFlight, [0,0,0,0,0,0,0,0,0,0] )
 plt.xlabel('Months after take off') 
-plt.ylabel('Calories Left 1,000,000 kcal/month') 
-plt.title('Calories Left for the crew per Month') 
+plt.ylabel('Kilocalories Left 1,000,000 kcal/month') 
+plt.title('Kilocalories Left for the crew per Month') 
 plt.show()
